@@ -9,7 +9,7 @@ html, body{
   width: 100%;
   font-family: 'Poppins', sans-serif;
   color: #222;
-  background-image: url('../images/img1.jpg');
+  background-image: url('../images/wp1812838-geometric-wallpapers.jpg');
 }
 
 .navbar{
@@ -25,7 +25,7 @@ html, body{
 }
 
 #sign-in-form{
-    margin-top: 20vh;
+    margin-top: 15vh;
 }
 
 

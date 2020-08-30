@@ -17,16 +17,16 @@
 	<img style="position:fixed;"  src="../images/carousel_0.jpg">
 	<!-- nav bar -->
     <div>
-        <nav style="background-color:antiquewhite;" class="navbar navbar-expand-md navbar-light sticky-top">
+        <nav style="background: transparent ; " class="navbar navbar-expand-md navbar-light sticky-top">
             <div class="container-fluid">
-                <a style=" font-size: 150%;" class="navbar-brand" href="#">DISCUSSION</a>
+                <a style=" font-size: 150%; color: white; font-weight: bold;" class="navbar-brand" href="#">DISCUSSION</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-responsive">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbar-responsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="/users/sign-out">Sign Out</a>
+                            <a style="color: white;font-weight: bold;" class="nav-link" href="/users/sign-out">Sign Out</a>
                         </li>
                     </ul>
                 </div>
@@ -40,13 +40,12 @@
 <div class="padding">
     <section id="feed-post">
 		<% if(locals.user) { %>
-		<form class="container-fluid text-center col-xl-6" enctype="multipart/form-data" id="new-post-form" method="POST" action="/posts/create">
+		<form class="container-fluid text-center col-xl-6" id="new-post-form" method="POST" action="/posts/create">
 				<div class="">
 					<textarea style="border-radius: 2vh;" name="content" cols="40" rows="3" placeholder="Type Here..."></textarea>
 				</div>
 				<br>
-				<input type="file" name="post" placeholder="Profile pic">
-				<div class="">
+				<div>
 					<input type="submit" value="Post">
 				</div>
         </form>
@@ -57,10 +56,10 @@
                 <% for(post of posts) { %>
                     
 					<li style="list-style-type: none;" id="post-<%= post._id %>">
-						<div style="background-color: whitesmoke;" class="card">
+						<div style="background-color: whitesmoke; background-blend-mode: lighten;" class="card">
 						<div class="p-2">
 						<div class="container-fluid row">
-							<div class="col-xl-11 col-md-11 col-xs-10">
+							<div style="font-size: 4vh;" class="col-xl-11 col-md-11 col-xs-10">
 								<i class="fad fa-chevron-right"></i>&nbsp&nbsp<%= post.content %>
 							</div>
 							<div class="col-xl-1 col-md-1 col-xs-1">
@@ -79,9 +78,9 @@
 						<div class="post-comments ml-5">
 							<% if(locals.user) { %>
 								<form id="new-comment-form" action="/comments/create" method="POST">
-									<i class="fad fa-comments"></i>&nbsp&nbsp<input type="text"  name="content" placeholder="Type comments here...">
+									<i class="fad fa-comments"></i>&nbsp&nbsp<input type="text"  name="content" placeholder="type answer...">
 									<input type="hidden" name="post" value="<%= post._id%>">
-									<input type="submit" value="Add comment">
+									<input type="submit" value="Add">
 								</form>
 								<br>
 							<% } %>    
@@ -96,11 +95,9 @@
 													</small>
 													<% } %>
 												  &nbsp<%=comment.content%>
-												  <br>
-												  <small>
-													  <%= post.user.name %>
-												  </small>
-												  <br>
+												  <div style="border-bottom: 1px solid black; width: 50%;">
+
+												  </div>
 											  </p>
 										</li>
 									<% } %>

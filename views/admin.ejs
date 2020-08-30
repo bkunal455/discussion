@@ -2,103 +2,121 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>Form Page</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="/css/normalize.css">
-      <link rel="stylesheet" href="/css/bootstrap.min.css">
-      <link rel="stylesheet" href="/css/font-awesome.min.css">
-      <link rel="stylesheet" href="/css/themify-icons.css">
-      <link rel="stylesheet" href="/css/pe-icon-7-filled.css">
-      <link rel="stylesheet" href="/css/flag-icon.min.css">
-      <link rel="stylesheet" href="/css/cs-skin-elastic.css">
-      <link rel="stylesheet" href="/css/style.css">
-      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Admin</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link href="https://kit-pro.fontawesome.com/releases/v5.13.1/css/pro.min.css" rel="stylesheet">
+	<link href="/css/admission.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://m.w3newbie.com/you-tube.css">
+    <script>
+        $(document).ready(function(){
+            $('a[data-toggle="list"]').on('show.bs.list', function(e) {
+                localStorage.setItem('activeTab', $(e.target).attr('href'));
+            });
+            var activeTab = localStorage.getItem('activeTab');
+            if(activeTab){
+                console.log($('#myTab a[href="' + activeTab + '"]'));
+                $('#myTab a[href="' + activeTab + '"]').tab('show');
+            }
+        });
+    </script>
 </head>
 <body>
-    <aside id="left-panel" class="left-panel">
-        <nav class="navbar navbar-expand-sm navbar-default">
-            <div id="main-menu" class="main-menu collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                <li class="menu-title">Menu</li>
-                <li class="menu-item-has-children dropdown">
-                    <a href="#" > Department Master</a>
-                </li>
-                <li class="menu-item-has-children dropdown">
-                    <a href="#" > Leave Type Master</a>
-                </li>
-                <li class="menu-item-has-children dropdown">
-                    <a href="#" > Employee Master</a>
-                </li>
-                </ul>
+    <!-- nav bar -->
+    <div>
+        <nav style="background-image: url('/images/wp1812838-geometric-wallpapers.jpg');" class="navbar navbar-expand-md navbar-light sticky-top">
+            <div class="container-fluid">
+                <a style=" font-size: 150%;" class="navbar-brand" href="#"><img src="/images/logo.png" height="30vh"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-responsive">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar-responsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Welcome Admin
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                  <a class="dropdown-item" href="#"><i class="fad fa-power-off"></i> &nbsp&nbspLogout</a>
+                                </div>
+                              </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
-    </aside>
-    <div id="right-panel" class="right-panel">
-        <header id="header" class="header">
-            <div class="top-left">
-                <div class="navbar-header">
-                <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Logo"></a>
-                <a class="navbar-brand hidden" href="index.html"><img src="images/logo2.png" alt="Logo"></a>
-                <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
-                </div>
-            </div>
-            <div class="top-right">
-                <div class="header-menu">
-                <div class="user-area dropdown float-right">
-                    <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome Admin</a>
-                    <div class="user-menu dropdown-menu">
-                        <a class="nav-link" href="#"><i class="fa fa-power-off"></i>Logout</a>
+    </div>
+
+    <div>
+        <div class="container-fluid">
+            <div class="row padding">
+                <br>
+                    <div id="list" class="col-sm-12 col-md-2">
+                        <div>
+                        <div>
+                            <h4 style="border-bottom: 1.5px solid black">Menu</h4>
+                        </div>
+                        </div>
+                        <ul style="list-style-type:none;" class="list-group list-group-flush" id="myTab">
+                            <li ><a data-toggle="list" style="text-decoration: none; color: black;" href="#sectionA">Department Master&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<i class="fad fa-chevron-right"></i></a></li><br>
+                            <li ><a data-toggle="list" style="text-decoration: none; color: black;" href="#sectionB">Leave Type Master&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<i class="fad fa-chevron-right text-right"></i></a></li><br>
+                            <li ><a data-toggle="list" style="text-decoration: none; color: black;" href="#sectionC">Employee Master&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<i class="fad fa-chevron-right"></i></a></li><br>
+                            <li ><a data-toggle="list" style="text-decoration: none; color: black;" href="#sectionD">Discussion Master&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<i class="fad fa-chevron-right"></i></a></li><br>
+                        </ul>
                     </div>
-                </div>
-                </div>
-            </div>
-        </header>
-        <div class="content pb-0">
-            <div class="animated fadeIn">
-                <div class="row">
-                <div class="col-lg-12">
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                </div>
+                    <div id="aside" style="height: 100%;" class="tab-content col-sm-12 col-md-10">
+                        <div id="sectionA" class="tab-pane fade in ">
+                            <h1>Department Master</h1>
+                        </div>
+                        <div id="sectionB" class="tab-pane fade">
+                            <h1>Leave Type Master</h1>
+                            
+                        </div>
+                        <div id="sectionC" class="tab-pane fade">
+                            <h1>Employee Master</h1>
+                            
+                        </div>
+                        <div id="sectionD" class="tab-pane fade in active show">
+                            <h2 class="display-4">Discussion-Forum Master</h2>
+                            <table class="table">
+                                <thead>
+                                  <tr>
+                                   
+                                   
+                                    <th scope="col">User Post ID</th>
+                                    <th scope="col">Timestamp</th>
+                                    
+                                  </tr>
+                                </thead>
+
+                               
+                                    <% if(post) { %>
+                                        <% for(post of posts) { %>
+                                        <tbody>
+                                        <tr>
+                                            
+        
+                                            <td><%= post.id %></td>
+                                            <td><%= post.createdAt %></td>
+                                            <td><a class="delete-post-button" href="/posts/destroy/<%= post.id %>"><i style="color:red;" class="fas fa-trash"></i></a></td>    
+                                               
+                                            
+                                            
+                                        </tr>
+                                        </tbody>
+                                       <% } %>
+                                    <% } %>
+
+                              </table>
+                        </div>
+                    </div>
             </div>
         </div>
-        <div class="clearfix"></div>
     </div>
-    <script src="assets/js/vendor/jquery-2.1.4.min.js" type="text/javascript"></script>
-    <script src="assets/js/popper.min.js" type="text/javascript"></script>
-    <script src="assets/js/plugins.js" type="text/javascript"></script>
-    <script src="assets/js/main.js" type="text/javascript"></script>
 </body>
 </html>
-
-

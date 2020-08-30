@@ -22,12 +22,13 @@ const postSchema = new mongoose.Schema({
             ref : 'Comment'  
         }
     ],
-    post:{
-        type: String
+    image : {
+        type : String
     }
 },{
     timestamps : true
 });
+
 console.log("here");
 let storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -39,7 +40,7 @@ let storage = multer.diskStorage({
   })
 
 
-postSchema.statics.uploadedPost = multer({storage: storage}).single('post');
+postSchema.statics.uploadedPost = multer({storage: storage}).single('image');
 postSchema.statics.postsPath = Posts_PATH;
 
 const Post = mongoose.model('Post', postSchema);

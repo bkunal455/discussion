@@ -11,7 +11,7 @@ const cookieParser = require('cookie-parser');
 const app = express();
 
   
-app.use('/uploads', express.static(__dirname + '/uploads'));
+// app.use(express.static(__dirname + '/uploads'));
 
 const db= require('./config/mongoose');
 
@@ -55,7 +55,7 @@ app.use(passport.setAuthenticatedUser);
 
 app.use('/', require('./routes'));
 
-// app.use('/public', express.static(__dirname + '/public'));
+
 
 
 

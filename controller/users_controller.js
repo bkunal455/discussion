@@ -1,5 +1,5 @@
 const mongoose = require('../config/mongoose');
-const fs = require('fs');
+// const fs = require('fs');
 const path = require('path');
 const User = require('../models/user')
 const Post = require('../models/post')
